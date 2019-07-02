@@ -1,0 +1,49 @@
+{
+  "name": "webpack-react-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --config webpack.config.dev.js && webpack --config webpack.config.server.dev.js",
+    "start": "node ./dist/server",
+    "start-server": "node ./public/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@loadable/babel-plugin": "^5.10.0",
+    "@loadable/webpack-plugin": "^5.7.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "css-loader": "^3.0.0",
+    "extract-css-chunks-webpack-plugin": "^4.5.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "@loadable/server": "^5.9.0",
+    "express": "^4.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^5.0.1",
+    "react-spinkit": "^3.0.0"
+  }
+}
