@@ -1,6 +1,7 @@
 import React from "react";
+import "./city.css"
 const City = () => (
-    <div>
+    <div className=".city">
       <ul>
         <li>San Francisco</li>
         <li>Istanbul</li>

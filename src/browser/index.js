@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter as Router} from "react-router-dom"
-import { loadableReady } from '@loadable/component'
+import {loadableReady } from '@loadable/component'
 import App from "../components/App"
 // import FormContainer from "./js/components/container/FormContainer";
 // const wrapper = document.getElementById("create-article-form");

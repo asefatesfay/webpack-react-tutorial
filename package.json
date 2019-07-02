@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --config webpack.config.dev.js && webpack --config webpack.config.server.dev.js",
+    "build:prod": "rm -rf dist && webpack --config webpack.config.prod.js && webpack --config webpack.config.server.prod.js",
     "start": "node ./dist/server",
     "start-server": "node ./public/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,6 +31,7 @@
     "mini-css-extract-plugin": "^0.7.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
