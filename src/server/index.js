@@ -9,9 +9,23 @@ import ReactDOMServer from "react-dom/server";
 import {ChunkExtractor} from "@loadable/server";
 import exphbs from "express-handlebars";
 
+// for development use only
+import webpack from "webpack";
+import webpackDevMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+import config from "../../webpack.config.dev.js";
 const statsFile = path.join(__dirname, "loadable-stats.json");
 
 const app = express();
+const DIST_DIR = path.join(__dirname);
+const compiler = webpack(config);
+app.use(
+	webpackDevMiddleware(compiler, {
+		publicPath: config.output.publicPath,
+	})
+);
+
+app.use(webpackHotMiddleware(compiler));
 // app.set("view engine", "hbs");
 // app.set("views", path.join(__dirname, "views"));
 app.engine("handlebars", exphbs());

@@ -7,7 +7,6 @@ import App from "../components/App"
 // const wrapper = document.getElementById("create-article-form");
 // wrapper ? ReactDOM.render(<FormContainer />, wrapper): false;
 
-
 loadableReady(() => {
     ReactDOM.hydrate(
         <Router>
@@ -16,6 +15,10 @@ loadableReady(() => {
         document.getElementById("root")
     )
 });
+
+if (typeof module.hot !== "undefined") {
+	module.hot.accept(); // eslint-disable-line no-undef
+}
   
 
 // window.onload = () => {

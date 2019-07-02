@@ -9,8 +9,8 @@ const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 module.exports = merge(baseConfig, {
     mode: "development",
     entry: {
-        main: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/browser/index.js"],
-    },
+		main: ["webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000", "./src/browser/index.js"]
+	},
     module: {
         rules: [
             {
