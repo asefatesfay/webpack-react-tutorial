@@ -7,10 +7,15 @@ import fs from "fs";
 import App from "../components/App";
 import ReactDOMServer from "react-dom/server";
 import {ChunkExtractor} from "@loadable/server";
+import exphbs from "express-handlebars";
 
 const statsFile = path.join(__dirname, "loadable-stats.json");
 
 const app = express();
+// app.set("view engine", "hbs");
+// app.set("views", path.join(__dirname, "views"));
+app.engine("handlebars", exphbs());
+app.set("view engine", "handlebars");
 app.use(express.static("dist"))
 app.get("*", (req, res) => {
     const context = {};
@@ -35,25 +40,16 @@ app.get("*", (req, res) => {
           console.error('Something went wrong:', err);
           return res.status(500).send('Oops, better luck next time!');
         }
-        return res.send(
-            `
-            <!DOCTYPE html>
-            <head>
-              <title>Universal Reacl</title>
-              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-              <script src="/main.js" defer></script>
-              <meta name="apple-mobile-web-app-capable" content="yes">
-              <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-					${linkTags}
-					${styleTags}
-            </head>
-            <body>
-              <div id="root">${componentHTML}</div>
-              ${scriptTags}
-            </body>
-          </html>
-        `
-        );
+        
+      res.render(
+        "index",
+        {
+          componentHTML,
+          scriptTags,
+          linkTags,
+          styleTags
+        }
+      );
       });
 });
 
