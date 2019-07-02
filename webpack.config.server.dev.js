@@ -28,12 +28,24 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ["css-loader", "sass-loader"],
+                use: [
+                    {loader: "css-loader",
+                    options: {
+                        modules: true,
+                      }, }, 
+                    {loader: "sass-loader"}
+                ],
 				exclude: /node_modules/,
 			},
 			{
 				test: /\.css$/,
-				use: ["css-loader"],
+                use: [
+                    {
+                        loader: "css-loader", options: {
+                        modules: true,
+                      }
+                    }
+                ],
 				exclude: /node_modules/,
 			},
 		],

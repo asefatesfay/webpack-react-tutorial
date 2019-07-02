@@ -11,11 +11,17 @@ module.exports = merge(baseConfig, {
 			{
 				test: /\.scss$/,
 				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+				options: {
+					modules: true,
+				  },
 				exclude: /node_modules/,
 			},
 			{
 				test: /\.css$/,
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				options: {
+					modules: true,
+				  },
 				exclude: /node_modules/,
 			},
 		],

@@ -1,7 +1,7 @@
 import React from "react";
-import "./city.css"
+import styles from "./city.css"
 const City = () => (
-    <div className=".city">
+    <div className={styles.city}>
       <ul>
         <li>San Francisco</li>
         <li>Istanbul</li>

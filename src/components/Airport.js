@@ -1,7 +1,7 @@
 import React from "react";
-import "./airport.css";
+import styles from "./airport.css";
 const Airport = () => (
-    <div className="airport">
+    <div className={styles.airport}>
        <ul>
         <li>Jomo Kenyatta</li>
         <li>Tambo</li>
