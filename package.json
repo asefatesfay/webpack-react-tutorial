@@ -4,10 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "rm -rf dist && webpack --config webpack.config.dev.js && webpack --config webpack.config.server.dev.js",
-    "build:prod": "rm -rf dist && webpack --config webpack.config.prod.js && webpack --config webpack.config.server.prod.js",
-    "start": "NODE_ENV=\"production\" node --icu-data-dir=node_modules/full-icu ./dist/server",
+    "build:dev": "rm -rf dist && webpack --config webpack.config.dev.js && webpack --config webpack.config.server.dev.js",
     "start:dev": "NODE_ENV=\"development\" node --icu-data-dir=node_modules/full-icu ./dist/server",
+    "build:prod": "rm -rf dist && webpack --config webpack.config.prod.js && webpack --config webpack.config.server.prod.js",
+    "start:prod": "NODE_ENV=\"production\" node --icu-data-dir=node_modules/full-icu ./dist/server",
     "start-server": "node ./public/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
